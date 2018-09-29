@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".UnoFragment" />
         <activity android:name=".DueFragment" />
-        <activity android:name=".TreFragment"></activity>
+        <activity android:name=".TreFragment" />
+        <activity android:name=".QuattroFragment"></activity>
     </application>
 
 </manifest>
