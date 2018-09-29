@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Fragment</string>
+    <string name="zoo">zoo</string>
+    <string name="name">Name</string>
+    <string name="surname">Surname</string>
+    <string name="freccia">freccia</string>
 
 </resources>

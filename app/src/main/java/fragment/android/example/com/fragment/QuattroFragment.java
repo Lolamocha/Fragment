@@ -3,22 +3,55 @@ package fragment.android.example.com.fragment;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import java.util.ArrayList;
+import java.util.List;
 
 public class QuattroFragment extends Fragment {
 
     View v;
+    RecyclerView myRecyclerView;
+    RecyclerViewAdapter adapter;
+    List<Elenco> Elenchi;
+
     public QuattroFragment() {
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.activity_uno_fragment,container,false);
-        return super.onCreateView(inflater, container, savedInstanceState);
+        v = inflater.inflate(R.layout.activity_container, container, false);
+        myRecyclerView = v.findViewById(R.id.recycler_id);
+        myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        myRecyclerView.setAdapter(adapter);
+        adapter = new RecyclerViewAdapter(getContext(), Elenchi);
+        return v;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        Elenchi = new ArrayList<>();
+        Elenchi.add(new Elenco("Quattro", "Fragment", R.drawable.oioioi));
+        Elenchi.add(new Elenco("Quattro", "Fragment", R.drawable.oioioi));
+        Elenchi.add(new Elenco("Quattro", "Fragment", R.drawable.oioioi));
+        Elenchi.add(new Elenco("Quattro", "Fragment", R.drawable.oioioi));
+        Elenchi.add(new Elenco("Quattro", "Fragment", R.drawable.oioioi));
+        Elenchi.add(new Elenco("Quattro", "Fragment", R.drawable.oioioi));
+        Elenchi.add(new Elenco("Quattro", "Fragment", R.drawable.oioioi));
+        Elenchi.add(new Elenco("Quattro", "Fragment", R.drawable.oioioi));
+        Elenchi.add(new Elenco("Quattro", "Fragment", R.drawable.oioioi));
+        Elenchi.add(new Elenco("Quattro", "Fragment", R.drawable.oioioi));
+        Elenchi.add(new Elenco("Quattro", "Fragment", R.drawable.oioioi));
+        Elenchi.add(new Elenco("Quattro", "Fragment", R.drawable.oioioi));
+        Elenchi.add(new Elenco("Quattro", "Fragment", R.drawable.oioioi));
+        Elenchi.add(new Elenco("Quattro", "Fragment", R.drawable.oioioi));
+        Elenchi.add(new Elenco("Quattro", "Fragment", R.drawable.oioioi));
     }
 }
