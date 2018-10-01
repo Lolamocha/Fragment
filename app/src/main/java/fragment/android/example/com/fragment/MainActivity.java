@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new UnoFragment(), "UNO");
         adapter.addFragment(new DueFragment(), "DUE");
         adapter.addFragment(new TreFragment(), "TRE");
-        adapter.addFragment(new TreFragment(), "QUATTRO");
+        adapter.addFragment(new QuattroFragment(), "QUATTRO");
         viewPager.setAdapter(adapter);
     }
 

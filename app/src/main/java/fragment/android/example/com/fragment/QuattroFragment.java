@@ -46,7 +46,6 @@ import java.util.List;
          Elenchi.add(new Elenco("Quattro","Fragment",R.drawable.oioioi));
          Elenchi.add(new Elenco("Quattro","Fragment",R.drawable.oioioi));
          Elenchi.add(new Elenco("Quattro","Fragment",R.drawable.oioioi));
-         Elenchi = new ArrayList<>();
          Elenchi.add(new Elenco("Quattro","Fragment",R.drawable.oioioi));
          Elenchi.add(new Elenco("Quattro","Fragment",R.drawable.oioioi));
          Elenchi.add(new Elenco("Quattro","Fragment",R.drawable.oioioi));
