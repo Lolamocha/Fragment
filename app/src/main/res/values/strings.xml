@@ -4,5 +4,9 @@
     <string name="name">Name</string>
     <string name="surname">Surname</string>
     <string name="freccia">freccia</string>
+    <string name="elenco_name">Elenco Name</string>
+    <string name="elenco_surname">Elenco surname</string>
+    <string name="img_elenco">img elenco</string>
+    <string name="play">play</string>
 
 </resources>

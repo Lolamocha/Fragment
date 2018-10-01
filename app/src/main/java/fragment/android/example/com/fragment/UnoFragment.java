@@ -27,11 +27,18 @@ public class UnoFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-       v = inflater.inflate(R.layout.activity_container,container,false);
-       myRecyclerView = v.findViewById(R.id.recycler_id);
-       myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-       myRecyclerView.setAdapter(adapter);
-       adapter = new RecyclerViewAdapter(getContext(),Elenchi);
+        v = inflater.inflate(R.layout.activity_container, container, false);
+        myRecyclerView = v.findViewById(R.id.recycler_id);
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+       // myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        myRecyclerView.setLayoutManager(layoutManager);
+        adapter = new RecyclerViewAdapter(getActivity(),Elenchi);
+        myRecyclerView.setAdapter(adapter);
+      //  v = inflater.inflate(R.layout.activity_category, container, false);
+       // myRecyclerView = v.findViewById(R.id.recycler_id);
+       // myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+       // myRecyclerView.setAdapter(adapter);
+
         return v;
 
     }

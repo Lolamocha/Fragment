@@ -1,5 +1,6 @@
 package fragment.android.example.com.fragment;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -11,15 +12,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TabLayout tabLayout;
     public ViewPager viewPager;
     public TextView tab1,tab2,tab3,tab4;
 
@@ -31,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
         viewPager =  findViewById(R.id.viewpager_id);
         setupViewPager(viewPager);
 
-        tabLayout =  findViewById(R.id.tablayout_id);
+        TabLayout tabLayout = findViewById(R.id.tablayout_id);
         tabLayout.setupWithViewPager(viewPager);
 
-        View headerView = ((LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE))
+        @SuppressLint("InflateParams") View headerView = ((LayoutInflater) Objects.requireNonNull(getSystemService(Context.LAYOUT_INFLATER_SERVICE)))
                 .inflate(R.layout.custom_tab, null, false);
 
          tab1 = headerView.findViewById(R.id.tab1);
@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.getTabAt(3).setCustomView(tab4);
 
         ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
         actionBar.setElevation(0);
 
     }
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
 
-        public ViewPagerAdapter(FragmentManager manager) {
+        ViewPagerAdapter(FragmentManager manager) {
             super(manager);
         }
 
@@ -82,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             return mFragmentList.size();
         }
 
-        public void addFragment(Fragment fragment, String title) {
+        void addFragment(Fragment fragment, String title) {
             mFragmentList.add(fragment);
             mFragmentTitleList.add(title);
         }

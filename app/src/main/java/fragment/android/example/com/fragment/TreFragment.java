@@ -26,11 +26,13 @@ public class TreFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        v = inflater.inflate(R.layout.activity_container,container,false);
+        v = inflater.inflate(R.layout.activity_container, container, false);
         myRecyclerView = v.findViewById(R.id.recycler_id);
-        myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        final LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        // myRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        myRecyclerView.setLayoutManager(layoutManager);
+        adapter = new RecyclerViewAdapter(getActivity(),Elenchi);
         myRecyclerView.setAdapter(adapter);
-        adapter = new RecyclerViewAdapter(getContext(),Elenchi);
         return v;
     }
 

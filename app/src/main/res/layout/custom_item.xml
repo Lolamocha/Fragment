@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="8dp"
+    android:id="@+id/custom_item_id"
     android:background="@color/colorPrimary">
 
     <ImageView
@@ -52,7 +53,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_next_"
+            android:src="@drawable/ic_play"
             android:contentDescription="@string/freccia" />
 
     </LinearLayout>
